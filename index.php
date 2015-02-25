@@ -3,126 +3,26 @@
 <html>
     <head>
     	<meta http-equiv="Content-Type" content="text/html; charset=gb18030">
-		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function() {
-			    $('#button1').click(function() {
-				    var
-				    $marginLefty = $(this).next();
-				    $marginLefty.animate({
-					    marginLeft: parseInt(
-					    $marginLefty.css('marginLeft'),10) == 0 ?
-						$marginLefty.outerWidth() :0
-				    });
-			    });
-		    });
-
-		    $(document).ready(function() {
-			    $('#button2').click(function() {
-				    var
-				    $marginLefty = $(this).next();
-				    $marginLefty.animate({
-					    marginLeft: parseInt(
-						$marginLefty.css('marginLeft'),10) == 0 ?
-						$marginLefty.outerWidth() :0
-				    });
-			    });
-		    });
-			</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
 		<title>BUS MAP | Le ultimate guia urbano de los pampas</title>
-		<style type="text/css">
-			body{
-				width:100%;
-				height: 100%;
-				position: fixed;
-				margin: 0;
-				padding: 0;
-			}
-			#googleMap{
-				width: 100%;
-				height: 100%;
-			}
-			
-			#button{
-				float: right;
-			}
-			.slide {
-				position: relative;
-				overflow: hidden;
-				height: 100%;
-				width: 25%;
-				top: -100%;
-				float: right;
-				}
-			.rotas {
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				width: 100%;
-				height: 92%;
-				padding: 1%;
-				margin: 0 0 4% 100%;
-				background-color:rgba(00, 00, 00, .8);
-				color: #222;
-				}
-			.rotas ul{
-				margin: 2%;
-				padding: 0;
-			}
-			.rotas ul li{
-				background: #eee;
-				margin: .2%;
-				list-style: none;
-			}
-		    
-		    .horarios {
-				position: absolute;
-				left: 0;
-				bottom: 0;
-				width: 100%;
-				height: 92%;
-				padding: 1%;
-				margin: 0 0 4% 100%;
-				background-color:rgba(00, 00, 00, .8);
-				color: #222;
-				}
-			.horarios ul{
-				margin: 2%;
-				padding: 0;
-			}
-			.horarios ul li{
-				background: #eee;
-				margin: .2%;
-				list-style: none;
-			}
-
-        	</style>
-        	
-	</head>
-	<body onload="contagem()">
-		<div id="googleMap"></div>
-		</div>
-		<div id="slidemarginleft" class="slide">
-			<button id="button1" >button1</button>
-			<div class="rotas">ROTAS
-				<ul>
-					<li><input type="checkbox" id="Rota" onclick="M4(this)">Metro4 - ROTA</input></li>
-					<li><input type="checkbox" id="Rota" onclick="M3(this)">Metro3 - ROTA</input></li>
-					<li><input type="checkbox" id="Rota" onclick="L4(this)">Linha4 - ROTA</input></li>
-				</ul>
-			</div>
-			<button id="button2" >button2</button>
-			<div class="horarios">HORARIOS	
-				<ul>
-					<li><input type="checkbox" id="Rota" onclick="M4(this)">Metro4 - HORÁRIO</input></li>
-					<li><input type="checkbox" id="Rota" onclick="M3(this)">Metro3 - HORÁRIO</input></li>
-					<li><input type="checkbox" id="Rota" onclick="L4(this)">Linha4 - HORÁRIO</input></li>
-				</ul>
-			</div>
-		</div>
+		<link rel="stylesheet" type="text/css" href="http://douglasmedina.com/assets/normalize.css">
+        <link href='http://fonts.googleapis.com/css?family=News+Cycle' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="index.css">
+		<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>	
+		<script type="text/javascript"></script>
 		<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+	</head>
+	<body>
+		<img class="logo" src="imgs/rm-r-180.png">
+		<div id="googleMap"></div>
+		<div class="rotas">
+			<img class="logo-icon" src="">
+			<ul>
+				<li><input type="checkbox" class="rota" onclick="M4(this)">Metro4 - ROTA</input></li>
+				<li><input type="checkbox" onclick="M3(this)">Metro3 - ROTA</input></li>
+				<li><input type="checkbox" onclick="L4(this)">Linha4 - ROTA</input></li>
+			</ul>
+		</div>
 		<script>
 			function initialize() {
 
@@ -431,7 +331,7 @@
 				linha4.setMap(null);
 
 			}
-			//TOGGLE - METRO4
+			//TOGGLES
 			function M4 (obj)
 
 				{
@@ -459,6 +359,5 @@
 
 			google.maps.event.addDomListener(window, 'load', initialize);
 			</script>
-
 	</body>
 </html>
